@@ -1,0 +1,6 @@
+## Interface: 51000
+## Title: KirossShh
+## Author: Atheri
+## Version: 0.1
+
+KirossShh.lua
