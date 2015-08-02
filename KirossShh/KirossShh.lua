@@ -38,7 +38,7 @@ function(self, event, message, sender, _, _, _, _, _, chan_num, chan_name, ...)
 		name = string.sub(sender, 0, index-1)
 	end
 	
-    for t_name in kiross_chars do
+    for i, t_name in ipairs(kiross_chars) do
         if name == t_name then
             -- Message to send
             local text
