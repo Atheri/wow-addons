@@ -27,27 +27,33 @@ KirossShh_disable = false
 
 frame:SetScript("OnEvent", 
 function(self, event, message, sender, _, _, _, _, _, chan_num, chan_name, ...)
-	-- Remove the realm name from sender name
+    if KirossShh_disable == true then
+        return
+    end
+    
+    -- Remove the realm name from sender name
 	local index = string.find(sender, "-")
 	name = sender
 	if index ~= nil then
 		name = string.sub(sender, 0, index-1)
 	end
 	
-	if name == kiross_chars[1] and not KirossShh_disable then
-		-- Message to send
-		local text
-	
-		if chat_table[event] == "EMOTE" then
-			DoEmote("SILENCE", name)
-		else
-			text = kiross_chars[1] .. " Shhh"
-	
-			SendChatMessage(text, chat_table[event], nil, chan_num)
-			print(event)
-			print(chan_num, chan_name, name, message)
-		end
-	end	
+    for t_name in kiross_chars do
+        if name == t_name then
+            -- Message to send
+            local text
+        
+            if chat_table[event] == "EMOTE" then
+                DoEmote("SILENCE", name)
+            else
+                text = t_name .. " Shhh"
+        
+                SendChatMessage(text, chat_table[event], nil, chan_num)
+                print(event)
+                print(chan_num, chan_name, name, message)
+            end
+        end
+    end
 end)
 
 --[[
