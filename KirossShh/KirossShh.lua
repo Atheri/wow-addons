@@ -4,24 +4,32 @@ chat_table = {
 	["CHAT_MSG_CHANNEL"] = "CHANNEL",
 	["CHAT_MSG_GUILD"] = "GUILD",
 	["CHAT_MSG_PARTY"] = "PARTY",
-	["CHAT_MSG_RAID"] = "RAID",
+    ["CHAT_MSG_PARTY_LEADER"] = "PARTY",	
 	["CHAT_MSG_SAY"] = "SAY",
 	["CHAT_MSG_YELL"] = "YELL",
 	["CHAT_MSG_EMOTE"] = "EMOTE",
 	["CHAT_MSG_INSTANCE_CHAT"] = "INSTANCE_CHAT",
-	["CHAT_MSG_TEXT_EMOTE"] = "EMOTE"
+    ["CHAT_MSG_INSTANCE_CHAT_LEADER"] = "INSTANCE_CHAT",
+	["CHAT_MSG_TEXT_EMOTE"] = "EMOTE",
+    ["CHAT_MSG_RAID_LEADER"] = "RAID",
+    ["CHAT_MSG_RAID"] = "RAID",
+    ["CHAT_MSG_RAID_WARNING"] = "RAID"
 }
 
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("CHAT_MSG_CHANNEL")
 frame:RegisterEvent("CHAT_MSG_GUILD")
 frame:RegisterEvent("CHAT_MSG_PARTY")
-frame:RegisterEvent("CHAT_MSG_RAID")
+frame:RegisterEvent("CHAT_MSG_PARTY_LEADER")
 frame:RegisterEvent("CHAT_MSG_SAY")
 frame:RegisterEvent("CHAT_MSG_YELL")
 frame:RegisterEvent("CHAT_MSG_EMOTE")
 frame:RegisterEvent("CHAT_MSG_INSTANCE_CHAT")
+frame:RegisterEvent("CHAT_MSG_INSTANCE_CHAT_LEADER")
 frame:RegisterEvent("CHAT_MSG_TEXT_EMOTE")
+frame:RegisterEvent("CHAT_MSG_RAID")
+frame:RegisterEvent("CHAT_MSG_RAID_LEADER")
+frame:RegisterEvent("CHAT_MSG_RAID_WARNING")
 
 KirossShh_disable = false
 
